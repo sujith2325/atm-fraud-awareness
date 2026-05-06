@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ATM Fraud Awareness – Vertical Flow System</title>
+  <meta name="description" content="Interactive vertical flow system teaching ATM fraud scenarios and safety actions."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">🏧</div>
+      <div>
+        <div class="brand-name">SecureATM</div>
+        <div class="brand-sub">Fraud Awareness System</div>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <div class="scenario-pills" id="scenarioPills"></div>
+      <button class="btn-theme" id="btnTheme" aria-label="Toggle theme">☀️</button>
+    </div>
+  </div>
+</header>
+
+<!-- ══ HERO STRIP ══ -->
+<div class="hero-strip">
+  <div class="hero-strip-inner">
+    <div class="hs-badge">Vertical Flow System</div>
+    <h1 class="hs-title">ATM Fraud Awareness</h1>
+    <p class="hs-sub">Click any step to explore safety guidance. Steps animate in sequence automatically.</p>
+  </div>
+</div>
+
+<!-- ══ MAIN ══ -->
+<div class="page-wrap">
+
+  <!-- LEFT: Vertical Flow -->
+  <aside class="flow-col">
+    <div class="flow-header">
+      <div class="flow-scenario-badge" id="flowBadge">01</div>
+      <div>
+        <h2 class="flow-title" id="flowTitle">Lost ATM Card</h2>
+        <p class="flow-meta" id="flowMeta">5 steps · Click to explore</p>
+      </div>
+    </div>
+
+    <!-- Progress -->
+    <div class="flow-progress">
+      <div class="fp-bar" id="fpBar"></div>
+      <span class="fp-label" id="fpLabel">0 / 5</span>
+    </div>
+
+    <!-- Steps list -->
+    <div class="steps-rail" id="stepsRail"></div>
+
+    <!-- Nav buttons -->
+    <div class="flow-nav">
+      <button class="fnav-btn" id="btnPrev">‹ Prev</button>
+      <button class="fnav-btn primary" id="btnNext">Next ›</button>
+    </div>
+  </aside>
+
+  <!-- RIGHT: Detail Panel -->
+  <main class="detail-col" id="detailCol">
+
+    <!-- Placeholder state -->
+    <div class="detail-placeholder" id="detailPlaceholder">
+      <div class="dp-art">
+        <div class="dp-art-icon">👆</div>
+      </div>
+      <h3 class="dp-title">Select a step</h3>
+      <p class="dp-sub">Click any step on the left to see detailed safety guidance here.</p>
+    </div>
+
+    <!-- Active detail state -->
+    <div class="detail-active hidden" id="detailActive">
+      <div class="da-image-wrap" id="daImageWrap">
+        <div class="da-image" id="daImage"></div>
+      </div>
+      <div class="da-content" id="daContent">
+        <div class="da-step-tag" id="daTag">STEP 1</div>
+        <h2 class="da-title" id="daTitle">Step Title</h2>
+        <p class="da-desc" id="daDesc">Description goes here.</p>
+        <div class="da-instructions" id="daInstructions"></div>
+        <div class="da-tip" id="daTip"></div>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+<!-- ══ AUTO PLAY BAR ══ -->
+<div class="autobar">
+  <button class="autobar-btn" id="btnAuto">▶ Auto Play All Scenarios</button>
+  <span class="autobar-info">or use ← → keyboard arrows</span>
+</div>
+
+<!-- ══ FLOATING COMPLETION PANEL ══ -->
+<div class="float-done" id="floatDone">
+  <div class="fd-glass">
+    <div class="fd-top">
+      <span class="fd-check">✅</span>
+      <div>
+        <div class="fd-title">Scenario Complete!</div>
+        <div class="fd-sub" id="fdSub">Well done.</div>
+      </div>
+    </div>
+    <div class="fd-btns">
+      <button class="fd-btn-ghost" id="fdReplay">↺ Replay</button>
+      <button class="fd-btn-solid" id="fdNext">Next Scenario →</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
